@@ -2,9 +2,9 @@
 import '../styles/fade.css'
 ---
 
-<header class="w-full flex flex-col fixed top-0 left-0 z-50 "> <!-- ft -->
+<header id="header" class="w-full flex flex-col fixed top-0 left-0 z-50 "> <!-- ft -->
 
-  <div id="header" class="w-full h-custom bg-white flex flex-row justify-between shadow-lg">
+  <div class="w-full h-custom bg-white flex flex-row justify-between shadow-lg">
     <div class="p-2 flex flex-row">
       <a href="/">
         <img alt="Black Pata CC" src="/img/logo.svg" class="h-custom-2 rounded-full">
@@ -23,15 +23,14 @@ import '../styles/fade.css'
     </div>
   
     <div class="mr-2 p-4 flex flex-row gap-1 hidden md:flex md:block">
-  
       <div class="flex flex-row items-center justify-center ml-5 hidden md:flex md:inline-block">
         <a href="/">
-          <p class="text-2xl hover:text-gray-600 ">Index</p>
+          <p class="text-2xl hover:text-gray-600 ">Altres Edicions</p>
         </a>
       </div>
       <div class="flex flex-row items-center justify-center ml-5 hidden md:flex md:inline-block">
         <a href="/stravada">
-          <p class="text-2xl hover:text-gray-600">Stravada</p>
+          <p class="text-2xl hover:text-gray-600">Stravada 2024</p>
         </a>
       </div>
   
@@ -41,12 +40,12 @@ import '../styles/fade.css'
 
   <div class="menu flex justify-end">
     <div class="w-auto bg-white flex flex-col justify-end px-3 py-4 gap-2 mx-1 shadow-xl">
-  
+      <hr/>
       <a href="/">
-        <ul class="text-xl text-end">Index</ul>
+        <ul class="text-xl text-end">Altres Edicions</ul>
       </a>
       <a href="/stravada">
-        <ul class="text-xl text-end">Stravada</ul>
+        <ul class="text-xl text-end">Stravada 2024</ul>
       </a>
 
       <hr>

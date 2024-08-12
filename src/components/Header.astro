@@ -25,12 +25,12 @@ import '../styles/fade.css'
     <div class="mr-2 p-4 flex flex-row gap-1 hidden md:flex md:block">
       <div class="flex flex-row items-center justify-center ml-5 hidden md:flex md:inline-block">
         <a href="/">
-          <p class="text-2xl hover:text-gray-600 ">Altres Edicions</p>
+          <p class="altres_edicions item text-2xl hover:text-gray-600 ">Altres Edicions</p>
         </a>
       </div>
       <div class="flex flex-row items-center justify-center ml-5 hidden md:flex md:inline-block">
         <a href="/stravada">
-          <p class="text-2xl hover:text-gray-600">Stravada 2024</p>
+          <p class="stravada item text-2xl hover:text-gray-600">Stravada 2024</p>
         </a>
       </div>
   
@@ -42,10 +42,10 @@ import '../styles/fade.css'
     <div class="w-auto bg-white flex flex-col justify-end px-3 py-4 gap-2 mx-1 shadow-xl">
       <hr/>
       <a href="/">
-        <ul class="text-xl text-end">Altres Edicions</ul>
+        <ul class="altres_edicions item text-xl text-end">Altres Edicions</ul>
       </a>
       <a href="/stravada">
-        <ul class="text-xl text-end">Stravada 2024</ul>
+        <ul class="stravada item text-xl text-end">Stravada 2024</ul>
       </a>
 
       <hr>
@@ -131,4 +131,32 @@ import '../styles/fade.css'
   toggleBtn?.addEventListener('click', function (event) {
     menu?.classList.toggle('visible');
   })
+
+  const items = document.getElementsByClassName("item");
+
+  switch(window.location.pathname) {
+    case "/":
+      let altresEdicions = document.getElementsByClassName("altres_edicions");
+     
+      Array.prototype.forEach.call(items, function(item) {
+        if([...altresEdicions].includes(item)){
+          item.classList.add('underline')
+        }else {
+          item.classList.remove('underline')
+        }
+      })
+      break;
+    case "/stravada":
+      let stravada = document.getElementsByClassName("stravada");
+     
+      Array.prototype.forEach.call(items, function(item) {
+        if([...stravada].includes(item)){
+          item.classList.add('underline')
+        }else {
+          item.classList.remove('underline')
+        }
+      })
+      break;
+  }
+
 </script>

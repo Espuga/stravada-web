@@ -1,0 +1,107 @@
+---
+import '../../styles/fade.css'
+---
+
+<section class="demo-wrap bg-opacity-70 overflow-hidden">
+  <div class="demo-content h-custom flex flex-col justify-center m-custom p-custom font-1">
+    <h1 class="text-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl fl">Títol</h1>
+    <h2 class="text-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl fl dl-1">Subtítol</h2>
+  </div>
+</section>
+
+<style>
+  
+
+
+.demo-wrap {
+  position: relative;
+}
+
+.demo-wrap:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 85vh;
+  opacity: 0.7;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  animation: backgroundChange 15s infinite;
+}
+
+.demo-content {
+  position: relative;
+}
+
+.h-custom {
+  height: 85vh;
+}
+.p-custom {
+  padding-top: 12vh;
+}
+.m-custom {
+  margin-left: 3rem;
+}
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const images = [
+      /* '/img/background/img1.jpg',
+      '/img/background/img2.jpg',
+      '/img/background/img3.jpg',
+      '/img/background/img4.jpg',
+      '/img/background/img5.jpg' */
+      '/img/prova/1.png',
+      '/img/prova/2.png',
+      '/img/prova/3.png',
+    ];
+  
+  const preloadImages = (imageArray: any[], callback: { (): void; (): void; }) => {
+    let loadedImages = 0;
+    const totalImages = imageArray.length;
+    const onImageLoad = () => {
+      loadedImages++;
+      if (loadedImages === totalImages) {
+        callback();
+      }
+    };
+    imageArray.forEach((src: string) => {
+      const img = new Image();
+      img.src = src;
+      img.onload = onImageLoad;
+      img.onerror = onImageLoad;
+    });
+  };
+
+  // Crear keyframes i començar animació
+  const startAnimation = () => {
+    const numImages = images.length;
+    const opacity = "0.8"
+
+    let keyframes = '';
+    let currentPercentage = 0;
+
+    images.forEach((image, index) => {
+      const nextPercentage = ((index + 1) / numImages) * 100;
+      keyframes += `${currentPercentage}% { background-image: url('${image}'); opacity: ${opacity}; } `;
+      keyframes += `${nextPercentage - (100 / (numImages * 2))}% { background-image: url('${image}'); opacity: ${opacity}; } `;
+      keyframes += `${nextPercentage}% { opacity: 0; } `;
+      currentPercentage = nextPercentage;
+    });
+
+    // keyframe al final per suavitzar la transició
+    keyframes += `100% { background-image: url('${images[0]}'); opacity: ${opacity}; }`;
+
+    const styleSheet = document.styleSheets[0];
+    const keyframesRule = `@keyframes backgroundChange { ${keyframes} }`;
+    styleSheet.insertRule(keyframesRule, styleSheet.cssRules.length);
+  };
+
+  preloadImages(images, startAnimation);
+  });
+  </script>
+  

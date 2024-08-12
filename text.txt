@@ -1,0 +1,3 @@
+https://tailwindcss.com/docs/responsive-design
+https://tailwindcss.com/docs/font-size
+http://localhost:4321/stravada

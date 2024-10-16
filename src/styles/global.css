@@ -4,7 +4,8 @@
 
 @keyframes scale-a-lil {
     from {
-      scale: .5;
+      /* scale: .5; */
+      transform: scale(0.5);
     }
   }
   

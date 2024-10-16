@@ -17,5 +17,30 @@ import Info from "./stravada/info.astro";
     <WelcomePack />
     <Info />
   </main>
+
+  <!-- <script>
+    // Espera a que el DOM esté completamente cargado
+    document.addEventListener('DOMContentLoaded', function() {
+      const elements = document.querySelectorAll('.scale-a');
+
+      window.addEventListener('scroll', function() {
+        const viewHeight = window.innerHeight;
+
+        elements.forEach(element => {
+          const rect = element.getBoundingClientRect();
+          const htmlElement = element as HTMLElement;
+
+          // Ajusta el rango según necesites
+          if (rect.top >= viewHeight * 0.15 && rect.bottom <= viewHeight * 0.35) {
+            htmlElement.style.opacity = '1'; // Mostrar el elemento
+            htmlElement.style.animation = 'scale-a-lil 1s linear both';
+          } else {
+            htmlElement.style.opacity = '0'; // Ocultar el elemento fuera del rango
+          }
+        });
+      });
+    });
+  </script> -->
+
 </Layout>
 

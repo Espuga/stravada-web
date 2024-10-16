@@ -2,9 +2,9 @@
 const TIMESTAMP_END = 1739084400000 
 ---
 
-<section class="m-custom flex flex-col lg:flex-row justify-center items-center">
+<section class="m-custom flex flex-col lg:flex-row justify-center items-center overflow-x-hidden">
   <div class="order-2 lg:order-none w-full">
-    <div id="contador" class="text-custom flex flex-row w-full justify-center items-start  gap-2" data-date={TIMESTAMP_END}>
+    <div id="contador" class="text-custom flex flex-row w-full justify-center items-start  gap-2 fb xl:ft" data-date={TIMESTAMP_END}>
       <div class="flex flex-col justify-center items-center">
         <p class="text-5xl md:text-6xl 2xl:text-7xl" data-days>00</p>
         <p class="text-2xl md:text-3xl 2xl:text-4xl">DIES</p>
@@ -36,7 +36,7 @@ const TIMESTAMP_END = 1739084400000
       
     </div>
 
-    <div class="order-2 lg:order-none w-full">
+    <div class="order-2 lg:order-none w-full fb xl:fl">
       <div id="contador" class="text-custom flex flex-row w-full items-center justify-center h-22 lg:h-24 gap-2" data-date={TIMESTAMP_END}>
         <div class="flex flex-col justify-center items-center">
           <p class="text-3xl md:text-4xl 2xl:text-5xl">09/02/2025</p>
@@ -46,14 +46,14 @@ const TIMESTAMP_END = 1739084400000
       </div>
     </div>
 
-    <p class="text-base md:text-lg xl:text-xl 2xl:text-2xl md:px-4 text-center font-sans">
+    <p class="text-base md:text-lg xl:text-xl 2xl:text-2xl md:px-4 text-center font-sans fb xl:fl">
       Benvolguts/des, ens plau presentar-vos per quart any la <b class="text-custom ">Stravada</b>, una prova 
       ciclista organitzada pel <b class="text-custom ">Black Pata</b>. 
       La marxa transcorre a la fantàstica comarca del <b>Solsonès</b>, exactament pels municipis de Solsona, Lladurs i Olius, 
       on sempre és un plaer pedalar.
     </p>
   </div>
-  <div class="order-1 xl:order-none w-full flex justify-center">
+  <div class="order-1 xl:order-none w-full flex justify-center ft xl:fr">
     <!-- <img alt="Cartell Strvada" src="/img/prova/cartell.png" class="w-full scale-a" /> -->
     <!-- <img alt="Cartell Strvada" src="/img/stravada/cartell.jpg" class="w-full scale-a" /> -->
     <!-- <img alt="Cartell Strvada" src="/img/stravada/noCartell.png" class="w-full scale-a" /> -->
@@ -112,6 +112,21 @@ const TIMESTAMP_END = 1739084400000
 </script>
 
 <style>
+
+/* @keyframes caiguda {
+  from {
+    transform: translateX(-50vw);
+    opacity: 0;
+  } to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.caig {
+  animation: caiguda 1s forwards;
+} */
+
 .m-custom {
   margin-top: 12vh;
 }
@@ -147,5 +162,6 @@ const TIMESTAMP_END = 1739084400000
 .tes {
   animation: test 2s infinite;
 }
+
 
 </style>

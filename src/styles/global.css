@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes scale-a-lil {
+    from {
+      scale: .5;
+    }
+  }
+  
+/* .scale-a {
+    animation: scale-a-lil linear both;
+    animation-timeline: view();
+    animation-range: 15vh 35vh;
+} */
+
+@media (max-width: 768px) {
+    .scale-a {
+        animation: scale-a-lil linear both;
+        animation-timeline: view();
+        animation-range: 15vh 35vh;
+    }
+}
+
+@media (min-width: 768px) {
+    .scale-a {
+        animation: scale-a-lil linear both;
+        animation-timeline: view();
+        animation-range: 15vh 45vh;
+    }
+}

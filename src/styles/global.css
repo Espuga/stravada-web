@@ -2,17 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes scale-a-lil {
+/* @keyframes scale-a-lil {
     from {
-      /* scale: .5; */
+      /* scale: .5; *
       transform: scale(0.5);
     }
-  }
+  } */
   
 /* .scale-a {
     animation: scale-a-lil linear both;
     animation-timeline: view();
     animation-range: 15vh 35vh;
+} */
+
+@keyframes scale-a-lil {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* .scale-a {
+    animation: scale-a-lil 1s linear both;
+    opacity: 0;
+} */
+
+/* @keyframes scale-a-lil {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.scale-a {
+    opacity: 0; /* Inicialmente oculto *
+    transition: opacity 0.5s ease; /* Transición suave *
 } */
 
 @media (max-width: 768px) {

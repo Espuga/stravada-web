@@ -36,17 +36,20 @@ const TIMESTAMP_END = 1739084400000
       
     </div>
 
-    <div class="order-2 lg:order-none w-full fb xl:fl">
-      <div id="contador" class="text-custom flex flex-row w-full items-center justify-center h-22 lg:h-24 gap-2" data-date={TIMESTAMP_END}>
+    <div class="order-2 lg:order-none w-full fb xl:fl my-4 xl:my-0">
+      <div id="contador" class="text-custom flex flex-row w-full items-center justify-center h-22 lg:h-24 gap-2">
         <div class="flex flex-col justify-center items-center">
-          <p class="text-3xl md:text-4xl 2xl:text-5xl">09/02/2025</p>
+          <!-- <p class="text-3xl md:text-4xl 2xl:text-5xl">09/02/2025</p> -->
+          <a href="https://www.inscripcions.cat/stravadasolsona2024/" class="border-2 px-4 py-1 md:py-2 rounded-3xl button">
+            <p class="text-3xl md:text-5xl">Inscriu-te</p>
+          </a>
           <!-- <p class="text-2xl md:text-3xl 2xl:text-4xl">DIES</p> -->
         </div>
         
       </div>
     </div>
 
-    <p class="text-base md:text-lg xl:text-xl 2xl:text-2xl md:px-4 text-center font-sans fb xl:fl">
+    <p class="text-base md:text-lg xl:text-xl 2xl:text-2xl px-4 md:px-4 text-center font-sans fb xl:fl">
       Benvolguts/des, ens plau presentar-vos per quart any la <b class="text-custom ">Stravada</b>, una prova 
       ciclista organitzada pel <b class="text-custom ">Black Pata</b>. 
       La marxa transcorre a la fantàstica comarca del <b>Solsonès</b>, exactament pels municipis de Solsona, Lladurs i Olius, 
@@ -112,6 +115,29 @@ const TIMESTAMP_END = 1739084400000
 </script>
 
 <style>
+
+@keyframes k1 {
+  0% {
+    transform: scale(1);
+  } 50% {
+    transform: scale(1.05);
+  } 100% {
+    transform: scale(1);
+  }
+}
+.button {
+  /* background-color: #ed9335; */
+  background-color: #f4792c;
+  /* color: white; */
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+  animation: k1 1.5s infinite;
+  
+}
+.button:hover {
+    transform: scale(1.05);
+    animation: none;
+  }
 
 /* @keyframes caiguda {
   from {
